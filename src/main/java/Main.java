@@ -13,10 +13,17 @@ public class Main {
         int end2 = scanner.nextInt();
 
         RangeAdder adder1 = new RangeAdder(start1, end1);
+        adder1.start();
         RangeAdder adder2 = new RangeAdder(start2, end2);
+        adder2.start();
 
+        adder1.join();
+        adder2.join();
         long partialSum1 = adder1.getSum();
         long partialSum2 = adder2.getSum();
+
+        System.out.println(partialSum1);
+        System.out.println(partialSum2);
 
         long sum = partialSum1 + partialSum2; 
 
